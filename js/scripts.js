@@ -24,10 +24,11 @@ function resetFields() {
   $("input.new-street").val("");
   $("input.new-city").val("");
   $("input.new-state").val("");
+  $("div .selected").hide();
 }
 
 function mailingAddress() {
-  return '<h4>Mailing Address</h4>' +
+  return '<div class="selected"><h4>Mailing Address</h4>' +
                               '<div class="new-address">' +
                                '<div class="form-group">' +
                                  '<label for="new-street">Street</label>' +
@@ -41,7 +42,7 @@ function mailingAddress() {
                                  '<label for="new-state">State</label>' +
                                  '<input type="text" class="form-control new-state">' +
                                '</div>' +
-                             '</div>'
+                             '</div></div>'
 }
 
 
