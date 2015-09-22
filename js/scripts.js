@@ -1,4 +1,15 @@
 
+function Contact(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.addresses = [];
+}
+
+Contact.prototype.fullName = function() {
+  return this.firstName + " " + this.lastName;
+}
+
+
 $(document).ready(function() {
   $("#add-address").click(function() {
     $("#new-addresses").append('<div class="new-address">' +
@@ -23,7 +34,7 @@ $(document).ready(function() {
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
 
-    var newContact = { firstName: inputtedFirstName, lastName: inputtedLastName, addresses: [] };
+    var newContact = new Contact(inputtedFirstName,inputtedLastName);
 
     $(".new-address").each(function() {
       var inputtedStreet = $(this).find("input.new-street").val();
